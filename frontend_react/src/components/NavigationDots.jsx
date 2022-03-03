@@ -5,9 +5,12 @@ const NavigationDots = ({ active }) => {
     <div className="app__navigation">
       {["home", "about", "work", "skills", "testimonials", "contact"].map(
         (item, index) => (
-          <a href={`#${item}`} onClick={() => setToggle(false)}>
-            {item}
-          </a>
+          <a
+            key={item + index}
+            href={`#${item}`}
+            className="app__navigation-dot"
+            style={active === item ? { backgroundColor: "#313bac" } : {}}
+          />
         )
       )}
     </div>
