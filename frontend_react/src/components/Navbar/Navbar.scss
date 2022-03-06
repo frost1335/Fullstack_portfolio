@@ -6,12 +6,17 @@
   align-items: center;
 
   padding: 1rem 2rem;
+  padding-right: 200px;
   background: rgba($color: #fff, $alpha: 0.25);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
   border: 1px solid rgba($color: #fff, $alpha: 0.18);
   position: fixed;
   z-index: 2;
+
+  @media screen and (max-width: 900px) {
+    padding-right: 2rem;
+  }
 }
 
 .app__navbar-logo {
@@ -19,11 +24,11 @@
   justify-content: flex-start;
   align-items: center;
   img {
-    width: 90px;
-    height: 20px;
+    width: 170px;
+    height: 26px;
 
     @media screen and (min-width: 2000px) {
-      width: 180px;
+      width: 240px;
       height: 40px;
     }
   }
