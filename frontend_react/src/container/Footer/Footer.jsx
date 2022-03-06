@@ -25,6 +25,18 @@ const Footer = () => {
 
   const handleSubmit = () => {
     setLoading(true);
+
+    const contact = {
+      _type: "contact",
+      name: name,
+      email: email,
+      message: message,
+    };
+
+    client.create(contact).then(() => {
+      setLoading(false);
+      setIsFormSubmitted(true);
+    });
   };
 
   return (
@@ -46,41 +58,47 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="app__footer-form app__flex">
-        <div className="app__flex">
-          <input
-            className="p-text"
-            type="text"
-            placeholder="Your Name"
-            value={name}
-            name="name"
-            onChange={handleChangeInput}
-          />
-        </div>
-        <div className="app__flex">
-          <input
-            className="p-text"
-            type="email"
-            placeholder="Your Email"
-            value={email}
-            name="email"
-            onChange={handleChangeInput}
-          />
-        </div>
-        <div>
-          <textarea
-            className="p-text"
-            placeholder="Your Message"
-            value={message}
-            name="message"
-            onChange={handleChangeInput}
-          ></textarea>
-        </div>
+      {!isFormSubmitted ? (
+        <div className="app__footer-form app__flex">
+          <div className="app__flex">
+            <input
+              className="p-text"
+              type="text"
+              placeholder="Your Name"
+              value={name}
+              name="name"
+              onChange={handleChangeInput}
+            />
+          </div>
+          <div className="app__flex">
+            <input
+              className="p-text"
+              type="email"
+              placeholder="Your Email"
+              value={email}
+              name="email"
+              onChange={handleChangeInput}
+            />
+          </div>
+          <div>
+            <textarea
+              className="p-text"
+              placeholder="Your Message"
+              value={message}
+              name="message"
+              onChange={handleChangeInput}
+            ></textarea>
+          </div>
 
-        <button type="button" className="p-text" onClick={handleSubmit}>
-          {loading ? "Sending" : "Send Message"}
-        </button>
-      </div>
+          <button type="button" className="p-text" onClick={handleSubmit}>
+            {loading ? "Sending" : "Send Message"}
+          </button>
+        </div>
+      ) : (
+        <div>
+          <h3 className="head-text">Thank you for getting in touch !</h3>
+        </div>
+      )}
     </>
   );
 };
