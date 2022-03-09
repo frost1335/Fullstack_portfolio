@@ -166,25 +166,24 @@
   align-items: flex-end;
   position: relative;
 
-  img{
-      width: 100%;
-      object-fit: contain;
-      z-index: 1;
-
+  img {
+    width: 105%;
+    object-fit: contain;
+    z-index: 1;
+    opacity: 0.83;
   }
 
-
-  .overlay_circle{
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 0;
-      width: 100%;
-      height: 90%;
+  .overlay_circle {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    width: 100%;
+    height: 90%;
   }
 
-  @media screen and (max-width: 1200px ) {
-        margin: 2rem 0;
+  @media screen and (max-width: 1200px) {
+    margin: 2rem 0;
   }
 }
