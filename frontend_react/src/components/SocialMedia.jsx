@@ -6,7 +6,7 @@ import { FaFacebookF, FaTelegramPlane } from "react-icons/fa";
 const SocialMedia = () => {
   return (
     <div className="app__social">
-      <a href="https://t.me/R_Dilrozbek" target="_blank" rel="noreferrer">
+      <a href="https://t.me/Dilr0zbeK" target="_blank" rel="noreferrer">
         <div>
           <FaTelegramPlane />
         </div>
